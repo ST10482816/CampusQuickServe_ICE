@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class CampusQuickServe_ICE {    
     
     public static void main(String[] args) {
-        String customerName = JOptionPane.showInputDialog("Enter customer name:");;
+        String customerName = JOptionPane.showInputDialog("Enter customer name:");
         int studentNumber = 10412345;
         String itemOrdered = "Burger";
         int itemQuantity = 2;
