@@ -5,17 +5,21 @@ import javax.swing.JOptionPane;
 
 
 public class CampusQuickServe_ICE {    
+    private static final double VAT = 0.15;
     
     public static void main(String[] args) {
         String customerName = JOptionPane.showInputDialog("Enter customer name:");
-        int studentNumber = 10412345;
-        String itemOrdered = "Burger";
-        int itemQuantity = 2;
-        double itemPrice = 45.50;
-        double subtotal = itemQuantity * itemPrice;
-        final double VAT = 0.15;
+        String studentNumber = JOptionPane.showInputDialog("Enter student number:");
+        String itemOrdered = JOptionPane.showInputDialog("Enter item choice:");
+        String itemQuantity = JOptionPane.showInputDialog("Enter quantity:");
+        String itemPrice = JOptionPane.showInputDialog("Enter item price in rands:");
+        
+        double subtotal = Integer.parseInt(itemQuantity) * Integer.parseInt(itemPrice);
         double vatValue = VAT * subtotal;
         double total = vatValue + subtotal;
+        
+        
+        
         String headerMsg = "------CAMPUS QUICKSERVE------";
         String footerMsg = "Thank you for your order!";
         String invoiceEnd = "-------------------------------";
