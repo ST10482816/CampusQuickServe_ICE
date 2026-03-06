@@ -22,7 +22,7 @@ public class CampusQuickServe_ICE {
                 String studentNumber, 
                 String itemOrdered, 
                 String itemQuantity, 
-                String itemPrice){
+                double price){
             
             String headerMsg = "------CAMPUS QUICKSERVE------";
             String footerMsg = "Thank you for your order!";
@@ -35,11 +35,11 @@ public class CampusQuickServe_ICE {
                     
                     "Item Ordered: " + itemOrdered + "\n" + 
                     "Quantity: " + itemQuantity + "\n" +
-                    "Price per Item: R" + itemPrice + "\n\n" + 
+                    "Price per Item: R" + String.format("%.2f", price) + "\n\n" + 
                     
-                    "Subtotal: R" + subtotal + "\n" + 
-                    "VAT (15%): R" + vatValue + "\n" +
-                    "Total: R" + total + "\n\n" + 
+                    "Subtotal: R" + String.format("%.2f", subtotal) + "\n" + 
+                    "VAT (15%): R" + String.format("%.2f", vatValue) + "\n" +
+                    "Total: R" + String.format("%.2f", total) + "\n\n" + 
                     
                     footerMsg + "\n" + 
                     invoiceEnd + "\n";
@@ -64,7 +64,7 @@ public class CampusQuickServe_ICE {
         double vatValue = orderCalcResults[1];
         double total = orderCalcResults[2];
         
-        String invoiceOutput = Order.createInvoice(total, vatValue, subtotal, customerName, studentNumber, itemOrdered, itemQuantity, itemPrice);
+        String invoiceOutput = Order.createInvoice(total, vatValue, subtotal, customerName, studentNumber, itemOrdered, itemQuantity, price);
         JOptionPane.showMessageDialog(null, invoiceOutput);
 //        System.out.println(invoiceOutput);
         
